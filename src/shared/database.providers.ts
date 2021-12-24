@@ -1,4 +1,6 @@
 import { Sequelize } from "sequelize-typescript";
+import { Education } from "src/data/entity/education.entity";
+import { User } from "src/data/entity/user.entity";
 
 export const  databaseProviders = [
     {
@@ -10,9 +12,9 @@ export const  databaseProviders = [
                 port: 3306,
                 username: 'root',
                 password: 'anjana',
-                database: 'developer-panel',
+                database: 'developer_panel',
             });
-            sequelize.addModels([]);
+            sequelize.addModels([User,Education]);
             await sequelize.sync();
             return sequelize;
         }
