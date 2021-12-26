@@ -11,7 +11,7 @@ export class Experience extends Model{
     id: number
 
     @Column
-    userId: number
+    user_id: number
 
     @Column
     title: string;
