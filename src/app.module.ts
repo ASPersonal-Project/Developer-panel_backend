@@ -10,10 +10,11 @@ import { ExperienceService } from './services/experience/experience.service';
 import { SkillController } from './controller/skill/skill.controller';
 import { SkillService } from './services/skill/skill.service';
 import { SkillModule } from './modules/skill/skill.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
-  imports: [DatabaseModule,UserModule, EducationModule, ExperienceModule, SkillModule],
-  controllers: [SkillController],
-  providers: [SkillService],
+  imports: [DatabaseModule,UserModule, EducationModule, ExperienceModule, SkillModule, AuthModule],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

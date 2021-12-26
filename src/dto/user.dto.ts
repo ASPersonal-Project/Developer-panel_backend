@@ -7,6 +7,8 @@ export class CreateUserDto {
 
     email: string;
 
+    password: string;
+
     contactNo: string;
 
     profileUrl: string;
@@ -14,4 +16,10 @@ export class CreateUserDto {
     description: string;
 
     headline: string;
+}
+
+export class LoginUserDto {
+    email: string;
+
+    password: string;
 }

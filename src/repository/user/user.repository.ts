@@ -21,4 +21,10 @@ export class UserRepository{
     public fetchUserById(id: number): Promise<User> {
         return this.userEntity.findOne({where: {id: id}})
     }
+
+    public fetchUserByEmail(email: string): Promise<User>{
+        return this.userEntity.findOne({where: {
+            email: email
+        }})
+    }
 }
