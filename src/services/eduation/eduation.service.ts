@@ -8,7 +8,8 @@ export class EduationService {
         private educationRepository: EducationRepository
     ){}
 
-    public createEducation(createEducationDto: CreateEducationDto){
+    public createEducation(user:any,createEducationDto: CreateEducationDto){
+        createEducationDto.user_id = user.userId;
         return this.educationRepository.createEducation(createEducationDto);
     }
 

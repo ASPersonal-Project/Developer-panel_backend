@@ -1,8 +1,8 @@
-import { AutoIncrement, Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { User } from "./user.entity";
 
 @Table({
-    tableName: 'education',
-    timestamps: false
+    tableName: 'education'
 })
 export class Education extends Model{
     @PrimaryKey
@@ -10,6 +10,7 @@ export class Education extends Model{
     @Column
     id: number;
 
+    @ForeignKey(() => User)
     @Column
     user_id: number;
 
@@ -30,4 +31,7 @@ export class Education extends Model{
 
     @Column
     updated_at: Date;
+
+    @BelongsTo(() => User)
+    user: User
 }

@@ -1,5 +1,7 @@
 export class CreateEducationDto{
-    id: number
+    id: number;
+
+    user_id?: number;
 
     title: string;
 
@@ -7,7 +9,7 @@ export class CreateEducationDto{
 
     degree: string;
 
-    startDate: Date;
+    start_date: Date;
 
-    endDate: Date;
+    end_date: Date;
 }

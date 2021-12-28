@@ -1,8 +1,8 @@
-import { Table,Column,Model, PrimaryKey, AutoIncrement, CreatedAt, UpdatedAt } from "sequelize-typescript";
+import { Table,Column,Model, PrimaryKey, AutoIncrement, CreatedAt, UpdatedAt, HasMany } from "sequelize-typescript";
+import { Education } from "./education.entity";
 
 @Table({
     tableName: 'user',
-    timestamps: false
 })
 export class User extends Model{
     @PrimaryKey
@@ -40,5 +40,8 @@ export class User extends Model{
 
     @UpdatedAt
     @Column
-    updated_at: Date
+    updated_at: Date;
+
+    @HasMany(() => Education)
+    educations: Education[]
 }
