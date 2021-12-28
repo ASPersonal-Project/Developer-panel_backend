@@ -20,6 +20,9 @@ export class User extends Model{
     email: string;
 
     @Column
+    password: string;
+
+    @Column
     contact_no: string;
 
     @Column

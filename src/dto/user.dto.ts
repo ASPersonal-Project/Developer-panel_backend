@@ -1,17 +1,17 @@
 export class CreateUserDto {
     id: number;
 
-    fullName: string;
+    full_name: string;
 
-    userType: string;
+    user_type: string;
 
     email: string;
 
     password: string;
 
-    contactNo: string;
+    contact_no: string;
 
-    profileUrl: string;
+    profile_url: string;
 
     description: string;
 
