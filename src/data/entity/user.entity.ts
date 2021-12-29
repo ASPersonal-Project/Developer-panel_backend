@@ -1,5 +1,7 @@
 import { Table,Column,Model, PrimaryKey, AutoIncrement, CreatedAt, UpdatedAt, HasMany } from "sequelize-typescript";
 import { Education } from "./education.entity";
+import { Experience } from "./experience.entity";
+import { Skill } from "./skill.entity";
 
 @Table({
     tableName: 'user',
@@ -44,4 +46,10 @@ export class User extends Model{
 
     @HasMany(() => Education)
     educations: Education[]
+
+    @HasMany(() => Experience)
+    experience: Experience[]
+
+    @HasMany(() => Skill)
+    skill: Skill[]
 }

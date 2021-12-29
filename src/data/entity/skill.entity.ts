@@ -1,4 +1,5 @@
-import { AutoIncrement, Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, BeforeUpsert, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { User } from "./user.entity";
 
 @Table({
     tableName: 'skill',
@@ -10,6 +11,7 @@ export class Skill extends Model{
     @Column
     id: number
 
+    @ForeignKey(() => User)
     @Column
     user_id: number
 
@@ -24,4 +26,7 @@ export class Skill extends Model{
 
     @Column
     updated_at: Date
+
+    @BelongsTo(() => Skill)
+    skill: Skill
 }
