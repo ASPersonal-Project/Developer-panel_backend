@@ -1,6 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
 import { Education } from "src/data/entity/education.entity";
+import { Experience } from "src/data/entity/experience.entity";
+import { Skill } from "src/data/entity/skill.entity";
 import { User } from "src/data/entity/user.entity";
+
 
 export const  databaseProviders = [
     {
@@ -14,7 +17,7 @@ export const  databaseProviders = [
                 password: 'anjana',
                 database: 'developer_panel',
             });
-            sequelize.addModels([User,Education]);
+            sequelize.addModels([User,Education,Experience,Skill]);
             await sequelize.sync();
             return sequelize;
         }

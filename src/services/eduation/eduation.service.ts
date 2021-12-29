@@ -16,4 +16,8 @@ export class EduationService {
     public updateEducation(id: number,createEducationDto: CreateEducationDto){
         return this.educationRepository.updateEducation(id,createEducationDto);
     }
+
+    public deleteEducation(id: number){
+        return this.educationRepository.deleteEducation(id);
+    }
 }

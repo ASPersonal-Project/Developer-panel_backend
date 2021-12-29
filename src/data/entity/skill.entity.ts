@@ -1,9 +1,8 @@
-import { AutoIncrement, BeforeUpsert, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
 import { User } from "./user.entity";
 
 @Table({
     tableName: 'skill',
-    timestamps: false
 })
 export class Skill extends Model{
     @PrimaryKey
@@ -27,6 +26,6 @@ export class Skill extends Model{
     @Column
     updated_at: Date
 
-    @BelongsTo(() => Skill)
-    skill: Skill
+    @BelongsTo(() => User)
+    user: User
 }

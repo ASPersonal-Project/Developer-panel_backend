@@ -20,4 +20,8 @@ export class EducationRepository{
             id: id
         }})
     }
+
+    public deleteEducation(id: number){
+        return this.educationEntity.destroy({where: {id: id}});
+    }
 }
