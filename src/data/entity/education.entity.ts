@@ -1,4 +1,4 @@
-import { AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, BelongsTo, Column, CreatedAt, ForeignKey, Model, PrimaryKey, Table, UpdatedAt } from "sequelize-typescript";
 import { User } from "./user.entity";
 
 @Table({
@@ -26,9 +26,11 @@ export class Education extends Model{
     @Column
     end_date: Date;
 
+    @CreatedAt
     @Column
     created_at: Date;
 
+    @UpdatedAt
     @Column
     updated_at: Date;
 

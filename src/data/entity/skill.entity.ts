@@ -1,4 +1,4 @@
-import { AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table,CreatedAt,UpdatedAt } from "sequelize-typescript";
 import { User } from "./user.entity";
 
 @Table({
@@ -20,9 +20,11 @@ export class Skill extends Model{
     @Column
     interpersonal_skill: string
 
+    @CreatedAt
     @Column
     created_at: Date
 
+    @UpdatedAt
     @Column
     updated_at: Date
 

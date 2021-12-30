@@ -14,6 +14,10 @@ export class ExperienceRepository{
         return this.experienceEntity.create(createExperienceDto);
     }
 
+    fetchExperience(userId: number){
+        return this.experienceEntity.findAll({where: {user_id: userId}})
+    }
+
     updateExperience(id: number,createExperienceDto: CreateExperienceDto){
         return this.experienceEntity.update(createExperienceDto, {where: {id: id}})
     }

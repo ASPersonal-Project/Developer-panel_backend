@@ -13,6 +13,10 @@ export class EduationService {
         return this.educationRepository.createEducation(createEducationDto);
     }
 
+    public fetchEducation(user: any){
+        return this.educationRepository.fetchEducation(user.userId);
+    }
+
     public updateEducation(id: number,createEducationDto: CreateEducationDto){
         return this.educationRepository.updateEducation(id,createEducationDto);
     }

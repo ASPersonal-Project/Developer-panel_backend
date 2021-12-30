@@ -15,6 +15,10 @@ export class EducationRepository{
         return this.educationEntity.create(createEducationDto);
     }
 
+    public fetchEducation(userId: number){
+        return this.educationEntity.findAll({where: {user_id: userId}})
+    }
+
     public updateEducation(id: number,createEducationDto: CreateEducationDto){
         return this.educationEntity.update(createEducationDto, {where: {
             id: id

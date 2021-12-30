@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Post, Put, UseGuards, Request, Delete } from '@nestjs/common';
+import { Body, Controller, Param, Post, Put, UseGuards, Request, Delete, Get } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { CreateEducationDto } from 'src/dto/education.dto';
 import { CreateUserDto } from 'src/dto/user.dto';
@@ -15,6 +15,12 @@ export class EducationController {
     @Post()
     public createEducation(@Request() _req: any, @Body() createEducationDto: CreateEducationDto){
         return this.educationService.createEducation(_req.user,createEducationDto);
+    }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Get()
+    public fetchEducation(@Request() _req: any){
+        return this.educationService.fetchEducation(_req.user);
     }
 
     @UseGuards(AuthGuard('jwt'))

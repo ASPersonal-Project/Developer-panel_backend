@@ -9,8 +9,13 @@ export class ExperienceService {
         private experienceRepository: ExperienceRepository
     ){}
 
-    public createExperience(createExperienceDto: CreateExperienceDto){
+    public createExperience(user: any,createExperienceDto: CreateExperienceDto){
+        createExperienceDto.user_id = user.userId;
         return this.experienceRepository.createExperience(createExperienceDto)
+    }
+
+    public fetchExperience(user: any){
+        return this.experienceRepository.fetchExperience(user.userId);
     }
 
     public updateExperience(id:number,createExperienceDto: CreateExperienceDto){
