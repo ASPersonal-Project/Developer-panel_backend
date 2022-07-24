@@ -1,6 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
+import { where } from "sequelize/dist";
 import { USER_ENTITY } from "src/data/providers/providertypes";
-import { CreateUserDto } from "src/dto/user.dto";
+import { CreateUserDto, UserIntroDto } from "src/dto/user.dto";
 import {User} from '../../data/entity/user.entity';
 
 @Injectable()
@@ -14,8 +15,16 @@ export class UserRepository{
         return this.userEntity.findAll();
     }
 
+    public async fetchUser(userId:number) {
+        return this.userEntity.findOne({where: {id:userId}})
+    }
+
     public createUser(createUserDto: CreateUserDto) {
         return this.userEntity.create(createUserDto)
+    }
+
+    public updateUserIntro(userId:number,userIntroDto: UserIntroDto){
+        return this.userEntity.update(userIntroDto,{where:{id:userId}})
     }
 
     public fetchUserById(id: number): Promise<User> {

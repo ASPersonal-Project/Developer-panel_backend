@@ -23,3 +23,12 @@ export class LoginUserDto {
 
     password: string;
 }
+
+export class UserIntroDto{
+    full_name: string;
+
+    job_position: string;
+
+    description: string;
+
+}

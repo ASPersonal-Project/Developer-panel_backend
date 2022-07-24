@@ -34,7 +34,7 @@ export class User extends Model{
     description: string;
 
     @Column
-    headline: string;
+    job_position: string;
 
     @CreatedAt
     @Column
